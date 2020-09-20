@@ -1,0 +1,86 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* For sticky footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0px 0px $footer-height 0px; /* Margin bottom equal to footer height */
+  font-family: $body-font;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $body-color;
+  text-align: left;
+  background-color: $white;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: darken($primary, 10%);
+  }
+}
+
+.text-align-center {
+  text-align: center !important;
+}
+
+.text-gray {
+  color: $text-gray;
+}
+
+.wrapper {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;  
+  max-width: 1140px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col {
+  flex-basis:0;
+  flex-grow:1;
+  min-width:0;
+  max-width:100%
+ }
+
+.col, .col-one-third {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width:$mobile-breakpoint) {
+  .col-one-third {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 33.33333%;
+    max-width: 33.33333%
+  }
+}
