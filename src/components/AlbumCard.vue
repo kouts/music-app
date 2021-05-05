@@ -1,9 +1,14 @@
 <template>
   <div class="album-card" :title="`${artist} - ${name} (${year})`" @click="clicked">
     <h2>{{ name }}</h2>
-    <h3 class="subtitle text-gray">{{ year }}</h3>
+    <h3 class="subtitle text-gray">{{ parseInt(year) ? year : 'N/A' }}</h3>
     <div class="text-align-center">
-      <img loading="lazy" :src="thumbnailUrl" class="image" :alt="name" />
+      <img
+        loading="lazy"
+        :src="thumbnailUrl ? thumbnailUrl : require('../assets/no-image-available.png')"
+        class="image"
+        :alt="name"
+      />
     </div>
   </div>
 </template>
