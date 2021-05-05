@@ -30,7 +30,9 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import AlbumCard from '@/components/AlbumCard.vue'
-const artist = 'pink_floyd'
+
+// Artist Id for Pink Floyd
+const artistId = '111259'
 
 export default {
   components: {
@@ -48,7 +50,7 @@ export default {
   },
   async mounted() {
     this.loading = true
-    await this.fetchAlbums(artist)
+    await this.fetchAlbums(artistId)
     this.loading = false
   },
   methods: {
