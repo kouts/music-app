@@ -1,4 +1,4 @@
-import { request } from '@/common/request';
+import { request } from '@/common/request'
 
 export const fetchAlbums = (artist) => {
   return request({
@@ -6,8 +6,8 @@ export const fetchAlbums = (artist) => {
     params: {
       s: artist
     }
-  });
-};
+  })
+}
 
 export const fetchAlbum = (id) => {
   return request({
@@ -15,5 +15,5 @@ export const fetchAlbum = (id) => {
     params: {
       m: id
     }
-  });
-};
+  })
+}

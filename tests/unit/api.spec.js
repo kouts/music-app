@@ -1,37 +1,38 @@
-import { fetchAlbums, fetchAlbum } from '@/api/albums';
-import * as module from '@/common/request';
+import { fetchAlbums, fetchAlbum } from '@/api/albums'
+import * as module from '@/common/request'
 
-const artist = '1';
-const idAlbum = '1';
-const originalRequest = module.request;
-module.request = jest.fn();
+const artist = '1'
+const idAlbum = '1'
+const originalRequest = module.request
+// eslint-disable-next-line no-import-assign
+module.request = jest.fn()
 
 beforeEach(() => {
-  jest.clearAllMocks();
+  jest.clearAllMocks()
   // Reset to original implementation before each test
-  module.request.mockImplementation(originalRequest);
-});
+  module.request.mockImplementation(originalRequest)
+})
 
 describe('fetchAlbums', () => {
-  it('gets called with the correct parameters', async() => {
-    await fetchAlbums(artist);
+  it('gets called with the correct parameters', async () => {
+    await fetchAlbums(artist)
     expect(module.request).toBeCalledWith({
       url: 'searchalbum.php',
       params: {
         s: artist
       }
-    });
-  });
-});
+    })
+  })
+})
 
 describe('fetchAlbum', () => {
-  it('gets called with the correct parameters', async() => {
-    await fetchAlbum(idAlbum);
+  it('gets called with the correct parameters', async () => {
+    await fetchAlbum(idAlbum)
     expect(module.request).toBeCalledWith({
       url: 'album.php',
       params: {
         m: idAlbum
       }
-    });
-  });
-});
+    })
+  })
+})

@@ -7,16 +7,16 @@
 </template>
 
 <style lang="scss" scoped>
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: $footer-height;
-    line-height: $footer-height;
-    background-color: darken($gray-light, 5%);
-    text-align: center;
-    a {
-      color: darken($primary, 20%);
-    }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footer-height;
+  line-height: $footer-height;
+  background-color: darken($gray-light, 5%);
+  text-align: center;
+  a {
+    color: darken($primary, 20%);
   }
+}
 </style>
