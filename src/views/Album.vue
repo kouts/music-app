@@ -22,17 +22,15 @@
             <h1>Album not found</h1>
           </div>
         </template>
-        <router-link :to="{ name: 'home' }" class="back">
-          &laquo; back
-        </router-link>
+        <router-link :to="{ name: 'home' }" class="back"> &laquo; back </router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
-import AlbumDetails from '@/components/AlbumDetails.vue';
+import { mapState, mapActions } from 'vuex'
+import AlbumDetails from '@/components/AlbumDetails.vue'
 
 export default {
   components: {
@@ -41,7 +39,7 @@ export default {
   data() {
     return {
       loading: false
-    };
+    }
   },
   computed: {
     ...mapState({
@@ -49,34 +47,34 @@ export default {
     })
   },
   async mounted() {
-    const id = this.$route.params.id;
-    this.loading = true;
-    await this.fetchAlbum(id);
-    this.loading = false;
+    const id = this.$route.params.id
+    this.loading = true
+    await this.fetchAlbum(id)
+    this.loading = false
   },
   methods: {
     ...mapActions(['fetchAlbum'])
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-  .album-details-wrapper {
-    margin-top: 2rem;
-  }
+.album-details-wrapper {
+  margin-top: 2rem;
+}
 
-  .dummy-album-details {
-    box-shadow: $shadow-small;
-    padding: 1.3rem 1.3rem 300px 1.3rem;
-    background-color: $white;
-    h1 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
+.dummy-album-details {
+  box-shadow: $shadow-small;
+  padding: 1.3rem 1.3rem 300px 1.3rem;
+  background-color: $white;
+  h1 {
+    margin: 0;
+    font-size: 1.2rem;
   }
+}
 
-  .back {
-    float: right;
-    margin-top: 0.5rem;
-  }
+.back {
+  float: right;
+  margin-top: 0.5rem;
+}
 </style>

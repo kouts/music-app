@@ -28,9 +28,9 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import AlbumCard from '@/components/AlbumCard.vue';
-const artist = 'pink_floyd';
+import { mapGetters, mapActions } from 'vuex'
+import AlbumCard from '@/components/AlbumCard.vue'
+const artist = 'pink_floyd'
 
 export default {
   components: {
@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       loading: false
-    };
+    }
   },
   computed: {
     ...mapGetters({
@@ -47,28 +47,28 @@ export default {
     })
   },
   async mounted() {
-    this.loading = true;
-    await this.fetchAlbums(artist);
-    this.loading = false;
+    this.loading = true
+    await this.fetchAlbums(artist)
+    this.loading = false
   },
   methods: {
     ...mapActions(['fetchAlbums']),
     goToAlbum(idAlbum) {
-      this.$router.push({ name: 'album', params: { id: idAlbum } });
+      this.$router.push({ name: 'album', params: { id: idAlbum } })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-  h1 {
-    margin-top: 2rem;
-    font-weight: 100;
-  }
-  .dummy-mini-card {
-    box-shadow: $shadow-small;
-    background-color: $white;
-    height: 350px;
-    margin-bottom: 2rem;
-  }
+h1 {
+  margin-top: 2rem;
+  font-weight: 100;
+}
+.dummy-mini-card {
+  box-shadow: $shadow-small;
+  background-color: $white;
+  height: 350px;
+  margin-bottom: 2rem;
+}
 </style>
