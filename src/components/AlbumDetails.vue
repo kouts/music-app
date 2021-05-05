@@ -1,7 +1,7 @@
 <template>
   <div class="album-details">
     <h1>{{ artist }} - {{ name }}</h1>
-    <h2 class="subtitle">{{ year }}</h2>
+    <h2 class="subtitle">{{ parseInt(year) ? year : 'N/A' }}</h2>
     <div class="row">
       <div class="col-one-third">
         <img loading="lazy" :src="thumbnailUrl" class="image" :alt="name" />
