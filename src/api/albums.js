@@ -1,10 +1,10 @@
 import { request } from '@/common/request'
 
-export const fetchAlbums = (artist) => {
+export const fetchAlbums = (artistId) => {
   return request({
-    url: 'searchalbum.php',
+    url: 'album.php',
     params: {
-      s: artist
+      i: artistId
     }
   })
 }
