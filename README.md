@@ -11,7 +11,7 @@ A Vue.js single page application that displays the Pink Floyd discography using 
 - Scroll position is restored in list view for better UX
 - Scroll back to top functionality
 
-View it live at https://kouts-musicapp.netlify.app
+View it live at https://kouts-music-app.netlify.app
 
 ## Project setup
 ```
