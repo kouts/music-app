@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Create an axios instance
 const request = axios.create({
-  baseURL: 'https://www.theaudiodb.com/api/v1/json/1',
+  baseURL: 'https://www.theaudiodb.com/api/v1/json/2',
   timeout: 5000 // Request timeout
 })
 
